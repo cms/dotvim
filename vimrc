@@ -1,4 +1,8 @@
 " vim: ts=4 sw=4 sts=0
+
+runtime bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect()
+
 set nocompatible
 set nobackup nowritebackup
 set background=dark
