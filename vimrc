@@ -91,3 +91,8 @@ if has('autocmd')
     autocmd FileType html,xhtml if has('eval') || has('insert_expand') | set omnifunc=htmlcomplete#CompleteTags | endif
     autocmd FileType css,html,xhtml set noexpandtab shiftwidth=2 tabstop=2
 endif
+
+
+" Key mappings
+map <F2> :NERDTreeToggle<CR>
+map <Leader>nt :NERDTree %:p:h<CR>
