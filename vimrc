@@ -78,6 +78,8 @@ if has('autocmd')
     filetype plugin indent on
     autocmd FileType c,cpp,java,perl,slang set noexpandtab shiftwidth=8 tabstop=8
     autocmd FileType javascript set shiftwidth=2 tabstop=2
+    autocmd FileType html,xhtml set expandtab shiftwidth=4 tabstop=4
+    autocmd FileType php set expandtab shiftwidth=4 tabstop=4
 
     autocmd FileType c      if has('eval') || has('insert_expand') | set omnifunc=ccomplete#Complete | endif
     autocmd FileType javascript if has('eval') || has('insert_expand') | set omnifunc=javascriptcomplete#CompleteJS | endif
