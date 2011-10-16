@@ -32,6 +32,7 @@ set showmode
 set ttyfast
 
 if has('gui_running')
+    set guifont=Monaco:h15
     set guioptions-=T
     set lines=40
 endif
@@ -51,7 +52,7 @@ if has('mouse')
     set mouse=a
 endif
 
-colorscheme ir_black
+colorscheme inkpot
 set cursorline
 
 set number
