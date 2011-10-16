@@ -10,6 +10,9 @@ set autowrite
 set wildmenu wildmode=longest:full,full
 set background=dark
 
+let mapleader = ","
+let g:mapleader = ","
+
 if has('win32') || has('win64')
     set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 else
@@ -100,4 +103,7 @@ endif
 
 " Key mappings
 map <F2> :NERDTreeToggle<CR>
-map <Leader>nt :NERDTree %:p:h<CR>
+map <F3> :TagbarToggle<CR>
+map <Leader>t :TagbarToggle<CR>
+map <Leader>f :NERDTreeToggle<CR>
+map <Leader>n :nohl<CR>
