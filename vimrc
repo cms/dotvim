@@ -5,6 +5,9 @@ call pathogen#infect()
 
 set nocompatible
 set nobackup nowritebackup
+set hidden
+set autowrite
+set wildmenu wildmode=longest:full,full
 set background=dark
 
 if has('win32') || has('win64')
