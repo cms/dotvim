@@ -1,5 +1,9 @@
 " vim: ts=4 sw=4 sts=0
 
+if has('win32') || has('win64')
+  let &runtimepath = substitute(&runtimepath, '\(Documents and Settings\|Users\)[\\/][^\\/,]*[\\/]\zsvimfiles\>', '.vim','g')
+endif
+
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
@@ -13,11 +17,6 @@ set background=dark
 let mapleader = ","
 let g:mapleader = ","
 
-if has('win32') || has('win64')
-    set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-else
-    set term=$TERM
-endif
 
 syntax on
 
@@ -32,7 +31,12 @@ set showmode
 set ttyfast
 
 if has('gui_running')
-    set guifont=Monaco:h15
+    if has('win32') || has('win64')
+        set guifont=Consolas:h11
+    else
+        set guifont=Monaco:h15
+    endif
+
     set guioptions-=T
     set lines=40
 endif
