@@ -48,8 +48,8 @@ if has('cmdline_info')
 endif
 
 if has('statusline')
-    set laststatus=1
-    "set statusline=%<%f\ %=\:\b%n%y%m%r%w\ %l,%c%V\ %P
+    set laststatus=2
+    set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 endif
 
 if has('mouse')
@@ -112,3 +112,15 @@ map <F3> :TagbarToggle<CR>
 map <Leader>t :TagbarToggle<CR>
 map <Leader>f :NERDTreeToggle<CR>
 map <Leader>n :nohl<CR>
+
+" Commands
+
+if has("eval")
+function! SL(function)
+  if exists('*'.a:function)
+    return call(a:function,[])
+  else
+    return ''
+  endif
+endfunction
+endif
